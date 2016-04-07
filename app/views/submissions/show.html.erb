@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @submission.title %>
+</p>
+
+
+
+<p>
+  <strong>Description:</strong>
+  <%= @submission.description %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @submission.rating %>
+</p>
+
+<p>
+  <strong>Pic:</strong>
+  <%= @submission.picture %>
+</p>
+
+<%= image_tag @submission.picture_url if @submission.picture? %>
+
+
+
+<%= link_to 'Edit', edit_submission_path(@submission) %> |
+<%= link_to 'Back', submissions_path %>
