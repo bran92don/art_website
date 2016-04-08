@@ -2,19 +2,25 @@
 <html>
 <head>
 	
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-	
   <title>ArtWebsite</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
-
-  <div id="nav" class="col-md-2">
-	<ul >
+	
+  <div class="col-md-2">
+  <div id="nav_top" class="col-md-2">
+	<ul id="nav" >
 		<center>
+			<br></br><br></br>
+			<h3>The Pad Shack Alpha</h3>
+			
+			<br></br><br></br>
+			<%= link_to current_user do %>
+				<%= image_tag(current_user.avatar_url(:small), :class => "img-circle") %>
+			<% end %>
+			
+			<br></br><br></br>
 			<li><a href="/">Home</a></li>
 			<li><a href="/submissions/new">Submit</a></li>
 			<li><a href="/submissions">Browse</a></li>
@@ -22,12 +28,15 @@
 		</center>
 	</ul>
   </div>
+  </div>
+  
   <div class="col-md-8">
 	<body >
 		<%= yield %>
+		
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 	</body>
    </div>
-
-
 
 </html>

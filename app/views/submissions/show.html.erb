@@ -1,42 +1,61 @@
-<p id="notice"><%= notice %></p>
 
 
-<div id="pic">
-	<div class="col-sm-8"></div>
+
+<div >
+	<div class="col-sm-4"></div>
+	
 	<div class="col-sm-2">
-		<%= image_tag @submission.picture_url(:small) if @submission.picture? %>
+		<h2>
+			<%= @submission.title %> By: <%= User.find( @submission.user_id).name %>
+		</h2>
+		<%= link_to 'Edit', edit_submission_path(@submission) %> |
+		
+		<div id="pic">
+			<%= image_tag @submission.picture_url(:small) if @submission.picture? %>
+		</div>
+		
 	</div>
-	<div class="col-sm-8"></div>
+	<div class="col-sm-4"></div>
+	
 </div>
 
 
 <div id="base" class="col-sm-6">
+	<div class="col-sm-1">
+		<%= link_to User.find( @submission.user_id) do %>
+			<%= image_tag User.find( @submission.user_id).avatar_url(:small), :class => "img-circle" %>
+		<% end %>
+		<p>
+			<%= User.find( @submission.user_id).name %>
+		</p>
+	</div>
 	
-	<p>
-	<strong>Title:</strong>
-	<%= @submission.title %>
-	</p>
+	<div class="col-sm-8">
+		<p>
+		<strong>Title:</strong>
+		<%= @submission.title %>
+		</p>
+		
+		
+		<p>
+		<strong>Description:</strong>
+		<%= @submission.description %>
+		</p>
+	</div>
 	
-	<p>
-	<strong>User:</strong>
-	<%= User.find( @submission.user_id).name %>
-	</p>
-	
-	<p>
-	<strong>Description:</strong>
-	<%= @submission.description %>
-	</p>
-	
-	<p>
-	<strong>Rating:</strong>
-	<%= @submission.rating %>
-	</p>
-	
-	<p>
-	<strong>Tags:</strong>
-	<%= @submission.tag_list %>
-	</p>
+	<div class="col-sm-1">
+		<p>
+		<strong>Rating:</strong>
+		<%= @submission.rating %>
+		</p>
+		
+		<p>
+		<strong>Tags:</strong>
+		<%= @submission.tag_list %>
+		</p>
+	</div>
 </div>
 
-<%= link_to 'Edit', edit_submission_path(@submission) %> |
-<%= link_to 'Back', submissions_path %>
+<div id="comments" class="col-sm-6>
+
+</div>

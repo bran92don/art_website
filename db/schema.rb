@@ -16,7 +16,10 @@ ActiveRecord::Schema.define(version: 20160408000740) do
   create_table "submissions", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.integer  "rating"
+    t.integer  "score"
+    t.integer  "views"
+    t.string   "category"
+    t.string   "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "picture"

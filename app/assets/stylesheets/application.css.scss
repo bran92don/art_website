@@ -16,11 +16,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 body{
     margin: 0;
     padding: 0;
 	border: 0;
-	background-color: #f6f7fb;
+	background-color: #dae5e7;
 }
 
 h1{
@@ -29,8 +30,19 @@ h1{
 }
 
 #nav{
-  min-height: 100vh;
-  background-color: white;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	background-color: white;
+	font-family: "Constantia";
+	font-family: "Constantia";
+	font-size: 150%;
+}
+
+#nav_top{
+	margin: 0;
+    padding: 0;
+	position: fixed;
 }
 
 ul {
@@ -51,6 +63,6 @@ li a {
 
 /* Change the link color on hover */
 li a:hover {
-    background-color: #555;
+    background-color: #3eafe7;
     color: white;
 }
