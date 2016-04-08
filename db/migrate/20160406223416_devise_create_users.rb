@@ -20,8 +20,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :last_sign_in_ip
 	  
 	  #Custom
-	  t.string :name
-	  t.text :description
+	  t.string :name, default:"User"
+	  t.text :description, default:"Im a poofy pamp lover :3"
 	  
       ## Confirmable
       # t.string   :confirmation_token

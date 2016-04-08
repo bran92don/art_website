@@ -15,7 +15,7 @@
   <%= @user.avatar %>
 </p>
 
-<%= image_tag @user.avatar_url if @user.avatar? %>
+<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
 
 
 

@@ -4,6 +4,12 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+gem 'acts-as-taggable-on'
+
+gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'autoprefixer-rails'
+
+
 #devise
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

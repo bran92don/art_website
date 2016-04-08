@@ -3,7 +3,10 @@ class CreateSubmissions < ActiveRecord::Migration
     create_table :submissions do |t|
       t.string :title
       t.string :description
-      t.integer :rating
+      t.integer :score
+	  t.integer :views
+	  t.string :category
+	  t.string :rating
 	  
       t.timestamps null: false
     end

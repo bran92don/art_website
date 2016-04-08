@@ -20,6 +20,24 @@
     <%= f.text_field :description %>
   </div>
   <%= f.file_field :picture %>
+  
+    <div class="field">
+    <%= f.label :Rating %><br>
+    <%= f.text_field :rating %>
+  </div>
+
+    <div class="field">
+    <%= f.label :Category %><br>
+    <%= f.text_field :category %>
+  </div>
+  
+	<div class="field">
+	<%= f.label :tag_list, "Tags (separated by commas)" %><br />
+	<%= f.text_field :tag_list %>
+	</div>
+
+
+  
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get 'tags/:tag', to: 'submissions#index', as: :tag
   devise_for :users
   scope "/" do
 	resources :users
