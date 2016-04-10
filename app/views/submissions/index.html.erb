@@ -1,16 +1,19 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<center><h1>Browse</h1></center>
 
-<h1>Listing Submissions</h1>
 
 <% @submissions.each do |submission| %>
-	<div id="thumbnail">
+	<div id="thumbnail" >
+
+		<div class="img-thumbnail">
 			<%= link_to image_tag(submission.picture_url(:thumb)), submission %>
-		</center>
-		<center>
-			<%= submission.title %>
-		</center>
+		</div>
+		<br>
+		<p><%= submission.title %> by: <%= User.find( submission.user_id).name %></p>
 	</div>
 <% end %>
+</div>
 <br>
 
 <%= link_to 'New Submission', new_submission_path %>

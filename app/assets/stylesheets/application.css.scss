@@ -16,12 +16,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#sidebar {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	color: lightblue;
+	background-color: white;
+	font-family: "Helvetica";
+	font-size: 110%;
+	position:fixed;
+}
+
+#sidebar-nav {
+    margin-top: 2px;
+	margin-left: auto;
+    margin-right: auto;
+
+}
 
 body{
     margin: 0;
     padding: 0;
 	border: 0;
-	background-color: #dae5e7;
+	background-color: #ecf0f1;
+	/* background-image: url("back.jpg");*/
+	width: 100%;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
 }
 
 h1{
@@ -33,6 +57,7 @@ h1{
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
+	color: white;
 	background-color: white;
 	font-family: "Constantia";
 	font-family: "Constantia";

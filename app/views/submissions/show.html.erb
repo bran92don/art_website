@@ -1,10 +1,10 @@
 
 
 
-<div >
-	<div class="col-sm-4"></div>
+<div class="col-md-11 row">
+	<div class="col-md-4"></div>
 	
-	<div class="col-sm-2">
+	<div class="col-md-3">
 		<h2>
 			<%= @submission.title %> By: <%= User.find( @submission.user_id).name %>
 		</h2>
@@ -15,35 +15,29 @@
 		</div>
 		
 	</div>
-	<div class="col-sm-4"></div>
+	<div class="col-md-4"></div>
 	
 </div>
 
 
-<div id="base" class="col-sm-6">
-	<div class="col-sm-1">
+<div id="base" class="col-md-12 row">
+	<div class="col-md-2">
+	<div >
 		<%= link_to User.find( @submission.user_id) do %>
-			<%= image_tag User.find( @submission.user_id).avatar_url(:small), :class => "img-circle" %>
+			<%= image_tag User.find( @submission.user_id).avatar_url(:small), :class => "img-rounded", :id => "avatar" %>
 		<% end %>
-		<p>
-			<%= User.find( @submission.user_id).name %>
-		</p>
+		</div>
+		<h3 align="center">   <%= User.find( @submission.user_id).name %> </h3>
 	</div>
 	
-	<div class="col-sm-8">
-		<p>
-		<strong>Title:</strong>
-		<%= @submission.title %>
-		</p>
-		
-		
+	<div class="col-md-8">
 		<p>
 		<strong>Description:</strong>
 		<%= @submission.description %>
 		</p>
 	</div>
 	
-	<div class="col-sm-1">
+	<div class="col-md-2">
 		<p>
 		<strong>Rating:</strong>
 		<%= @submission.rating %>
@@ -56,6 +50,18 @@
 	</div>
 </div>
 
-<div id="comments" class="col-sm-6>
-
+<div id="comments" class="col-md-12>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
+	<p>Test</p>
 </div>
+
