@@ -2,14 +2,15 @@
 
 
 <div class="col-md-11 row">
-	<div class="col-md-4"></div>
+	<div class="col-md-3"></div>
 	
-	<div class="col-md-3">
-		<h2>
-			<%= @submission.title %> By: <%= User.find( @submission.user_id).name %>
-		</h2>
-		<%= link_to 'Edit', edit_submission_path(@submission) %> |
-		
+	<div class="col-md-4">
+		<h4 >
+			<%= @submission.title %> by: <%= User.find( @submission.user_id).name %>
+		</h4>
+		<% if current_user == User.find( @submission.user_id) || current_user.role == "admin" %>
+			<%= link_to 'Edit', edit_submission_path(@submission), class: 'btn btn-info rm-round' %> 
+		<% end %>
 		<div id="pic">
 			<%= image_tag @submission.picture_url(:small) if @submission.picture? %>
 		</div>
@@ -20,24 +21,53 @@
 </div>
 
 
-<div id="base" class="col-md-12 row">
+<div id="base_title" class="col-md-12">
+	<div class="col-md-1"></div>
+	<div class="col-md-3">
+		<h4 align="left">
+		<strong><%= User.find( @submission.user_id).name %></strong>
+		</h4>
+	</div>
+	
+	<div class="col-md-4">
+		<h5 align="center">
+		<strong><%= @submission.title %></strong>
+		</h5>
+	</div>
+	<div class="col-md-4"></div>
+</div>
+
+<div id="base" class="col-md-12">
 	<div class="col-md-2">
 	<div >
 		<%= link_to User.find( @submission.user_id) do %>
 			<%= image_tag User.find( @submission.user_id).avatar_url(:small), :class => "img-rounded", :id => "avatar" %>
 		<% end %>
-		</div>
-		<h3 align="center">   <%= User.find( @submission.user_id).name %> </h3>
+	</div>
+
 	</div>
 	
 	<div class="col-md-8">
-		<p>
-		<strong>Description:</strong>
-		<%= @submission.description %>
-		</p>
+		<p> <%= @submission.description %> </p>
 	</div>
 	
 	<div class="col-md-2">
+		
+		<p>
+		<strong>Create Date:</strong>
+		<%= @submission.created_at %>
+		</p>
+		
+		<p>
+		<strong>Updated Date:</strong>
+		<%= @submission.updated_at %>
+		</p>
+		
+		<p>
+		<strong>Likes:</strong>
+		<%= @submission.score %>
+		</p>
+		
 		<p>
 		<strong>Rating:</strong>
 		<%= @submission.rating %>
@@ -50,7 +80,8 @@
 	</div>
 </div>
 
-<div id="comments" class="col-md-12>
+
+<div id="comments" class="col-md-12 container">
 	<p>Test</p>
 	<p>Test</p>
 	<p>Test</p>
@@ -64,4 +95,5 @@
 	<p>Test</p>
 	<p>Test</p>
 </div>
+
 

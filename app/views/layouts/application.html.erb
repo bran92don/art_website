@@ -7,16 +7,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   
-  	<div id="sidebar"  class="col-md-1 nopadding">
+  	<div id="sidebar"  class="col-md-1 nopadding ">
 		<div id="sidebar-nav" >
 			<center>
 			<br></br><br></br>
 			<p>The Pad Shack Alpha</p>
 			<br></br>
 			<%= link_to current_user do %>
-				<%= image_tag(current_user.avatar_url(:small), :class => "img-circle") %>
-			<% end %>
+				<% if current_user %>
+					<%= image_tag(current_user.avatar_url(:small), :class => "img-circle") %>
+			
 			<p>Welcome <%= current_user.name%></p>
+				<% end %>
+			<% end %>
 			</center>
 			
 			<br></br>
@@ -25,14 +28,14 @@
 			<li><a href="/submissions"><span class="glyphicon glyphicon-search"></span>  Browse</a></li>
 			<li><a href="/users"><span class="glyphicon glyphicon-user"></span>  Users</a></li>
 		</div>
+
     </div>
   
 </head>
 	<div class="container-fluid">
 	<div class="Row">
   
-  <div class="col-md-1 nopadding">
-  </div>
+  <div class="col-md-1 nopadding"></div>
   <div class="col-md-11 nopadding">
 	<body >
 		<%= yield %>
@@ -40,9 +43,15 @@
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 	</body>
+	
    </div>
    </div>
    </div>
-
+      	<div align="center" class="sticky-footer-navbar row">
+	<div class="col-md-4"><p>Test content</p></div>
+	<div class="col-md-4"><p>Test content</p></div>
+	<div class="col-md-4"><p>Test content</p></div>
+   </div>
+	
 	
 </html>

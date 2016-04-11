@@ -4,11 +4,11 @@
 
 
 #thumbnail{
-    padding: 0px;
+    padding: 20px;
     margin: 0px;
 	margin-left: auto;
     margin-right: auto;
-
+	display: inline-block;
 }
 
 #thumbnail_pic{
@@ -22,9 +22,16 @@
 }
 
 #base{
-	background-color: #34495e;
+	background-color: white;
 	min-height: 150px !important;
-	min-width: 100vw !important;
+
+}
+
+#base_title{
+	background-color: #6CCAC9;
+	
+	color: white;
+	font-size: 110%;
 }
 
 #pic{
@@ -36,12 +43,17 @@
 }
 
 #comments{
-	min-height: 10px; 
-	background-color: white;
+	min-height: 50px; 
+	background-color: grey;
 }
 
 #avatar {
 	border: 4px solid #bdc3c7;
-	top: -60px;
+	top: -8000%;
+	position: absolute;
+}
+
+.shft-up{
+	top: -42.325%;
 	position: absolute;
 }
