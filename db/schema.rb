@@ -11,15 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408000740) do
+ActiveRecord::Schema.define(version: 20160412183809) do
+
+  create_table "journals", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "journals", ["user_id"], name: "index_journals_on_user_id"
+
+  create_table "reports", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "category"
+    t.integer  "user"
+    t.text     "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "reports", ["user_id"], name: "index_reports_on_user_id"
 
   create_table "submissions", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.integer  "score"
-    t.integer  "views"
-    t.string   "category"
-    t.string   "rating"
+    t.integer  "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "picture"
