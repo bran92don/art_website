@@ -36,12 +36,13 @@
 }
 
 body{
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
 	border: 0;
 	background-color: #ecf0f1;
 	/* background-image: url("back.jpg");*/
-	width: 100%
+	width: 100%;
+	min-height: 100vh;
 }
 
 .nopadding {
