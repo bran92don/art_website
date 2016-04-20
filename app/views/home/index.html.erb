@@ -1,2 +1,19 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<center><h3>Recent News</h3></center>
+
+<div id ="news" class="col-md-12">
+	<p>THis is test info for right now.</p>
+</div>
+
+<div class="col-md-12">
+	<center><h3>Recent submissions</h3></center>
+	<% @submissions.reverse.each do |submission| %>
+	<div id="thumbnail" >
+
+		<div class="img-thumbnail">
+			<%= link_to image_tag(submission.picture_url(:thumb)), submission %>
+		</div>
+		<br>
+		<p><%= submission.title %> by: <%= User.find( submission.user_id).name %></p>
+	</div>
+<% end %>@post = Post.order("created_at").last
+</div>
